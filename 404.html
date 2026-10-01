@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="robots" content="noindex">
+	<title>404 | Rakshana Jayaprakash</title>
+	<link rel="icon" href="/images/favicon.ico">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="/css/site.css?v=3">
+	<style>
+		.nf { min-height: 100vh; display: grid; place-items: center; text-align: center; padding: 2rem 1rem; }
+		.nf h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(5rem, 24vw, 10rem); line-height: 1; letter-spacing: -0.02em; color: var(--accent-text); margin: 0; }
+		.nf h1 span { display: inline-block; }
+		.nf p { color: var(--muted); max-width: 30rem; margin: 1rem auto 1.75rem; font-size: 1.05rem; }
+		.nf .btn { margin: 0 0.25rem 0.5rem; }
+		.nf .bug { font-size: clamp(2.5rem, 8vw, 3.5rem); cursor: pointer; background: none; border: 0; padding: 0; }
+		.nf .say { min-height: 1.6em; margin: 0.5rem auto 1.5rem; font-size: 0.95rem; }
+		@media (prefers-reduced-motion: no-preference) {
+			.nf .bug { animation: scuttle 3s ease-in-out infinite; }
+			@keyframes scuttle { 0%,100% { transform: translateX(-14px) rotate(-6deg); } 50% { transform: translateX(14px) rotate(6deg); } }
+		}
+	</style>
+</head>
+<body>
+	<main class="nf">
+		<div>
+			<button class="bug" type="button" aria-label="Poke the bug">🐞</button>
+			<h1>4<span>0</span>4</h1>
+			<p>This page went off to debug itself and hasn't come back.</p>
+			<p class="say" role="status" aria-live="polite">duck says: try the home page.</p>
+			<a class="btn btn-primary" href="/">Back to home</a>
+			<button class="btn btn-ghost duck-btn" type="button">🦆 Ask the duck</button>
+		</div>
+	</main>
+	<script>
+		(function () {
+			var say = document.querySelector(".say");
+			var tips = [
+				"quack. check the url maybe",
+				"quack. works on my machine tho",
+				"quack. blame the cache, always",
+				"quack. maybe it was a typo, happens to everyone",
+				"quack. have u tried turning the link off n on again"
+			];
+			var i = 0;
+			document.querySelector(".duck-btn").addEventListener("click", function () { say.textContent = "duck says: " + tips[i++ % tips.length]; });
+			document.querySelector(".bug").addEventListener("click", function () { say.textContent = "You caught it! It was only a 404."; });
+		})();
+	</script>
+</body>
+</html>
