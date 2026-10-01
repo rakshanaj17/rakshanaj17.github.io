@@ -1,1 +1,8 @@
-# nothign for now
+# macOS
+.DS_Store
+
+# JetBrains / editor settings
+.idea/
+
+# Full-size originals; the site uses the web-sized copies in images/portraits/
+images/me2.jpg
